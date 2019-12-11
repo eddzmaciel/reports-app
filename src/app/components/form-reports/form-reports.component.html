@@ -1,0 +1,131 @@
+<div>
+  <br />
+  <h1>form-reports works!</h1>
+</div>
+<br />
+<br />
+<hr />
+<div class="row">
+  <div class="col-6  title-top-left ">
+    <label for=""> New Document</label>
+  </div>
+  <div class="col-6 title-top-right">
+    <div>Client Profile Name: Test ABC</div>
+  </div>
+</div>
+<form>
+  <div class="form-group row">
+    <label for="staticEmail" class="col-sm-4 col-form-label"
+      >Select Document Type:
+    </label>
+    <div class="col-sm-6">
+      <select class="form-control" id="exampleFormControlSelect1">
+        <option>File Type:</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+        <option>5</option>
+      </select>
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="inputPassword" class="col-sm-4 col-form-label"
+      >Document Description:</label
+    >
+    <div class="col-sm-6">
+      <input
+        type="password"
+        class="form-control"
+        id="description"
+        placeholder="Document Description ..."
+      />
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="inputPassword" class="col-sm-4 col-form-label"
+      >File Path:</label
+    >
+    <div class="col-sm-6">
+      <input
+        type="password"
+        class="form-control"
+        id="filepath"
+        placeholder="G:\shared_documents\file.pdf"
+      />
+    </div>
+    <div class="col-sm-2">
+      <button type="button" class="btn btn-success">Browse</button>
+    </div>
+  </div>
+</form>
+
+<hr />
+<div class="row">
+  <div class="col-6  title-top-left ">
+    <label for="">Manage Documents</label>
+  </div>
+</div>
+<h2>Drag and drop Example</h2>
+
+<div class="row drag-drop-container">
+  <div class="col-2 upload-botton"><p>Browse or...</p></div>
+  <div class="col-10 upload-zone">
+    <p>Drag and Drop your files here...</p>
+  </div>
+</div>
+
+<div class="row">
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">File Name</th>
+        <th scope="col">Updated</th>
+        <th scope="col">Updated By</th>
+        <th scope="col">Status</th>
+        <th scope="col">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">1</th>
+        <td>PerformanceReportPWMMay2019.pdf</td>
+        <td>31-May-2019</td>
+        <td>testuser</td>
+        <td class="text-pending">Pending</td>
+        <td class="td-large">
+          <button type="button" class="btn btn-success">
+            <fa name="check"></fa>
+          </button>
+          <button type="button" class="btn btn-danger">
+            <fa name="close"></fa>
+          </button>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">1</th>
+        <td>PerformanceReportPWMMay2019.pdf</td>
+        <td>31-May-2019</td>
+        <td>testuser</td>
+        <td class="text-approved">Approved</td>
+        <td class="td-large">
+          <button type="button" class="btn btn-danger">
+            <fa name="close"></fa>
+          </button>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">1</th>
+        <td>PerformanceReportPWMMay2019.pdf</td>
+        <td>31-May-2019</td>
+        <td>testuser</td>
+        <td class="text-rejected">Rejected</td>
+        <td class="td-large">
+          <button type="button" class="btn btn-default">
+            <fa name="ban"></fa> no actions
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

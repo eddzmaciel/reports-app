@@ -1,0 +1,28 @@
+<div class="card animated fadeIn fast">
+  <img [src]="props.img" class="card-img-top" [alt]="props.nombre" />
+  <div class="card-body">
+    <h5 class="card-title">{{ props.nombre }}</h5>
+    <p class="card-text">
+      {{ props.bio }}
+    </p>
+    <p class="card-text">
+      <small class="text-muted">{{ props.aparicion }}</small>
+    </p>
+
+    <!-- creating (click) event to call the function in the another view -->
+    <button
+      (click)="verHeroe()"
+      type="button"
+      class="btn btn-outline-primary btn-block"
+    >
+      Ver más...
+    </button>
+
+    <!-- we have to put the forwardSlash for get into tthis route ,
+        this is another way to use the routes-->
+
+    <!-- <a [routerLink]="['/heroe', i]" class="btn btn-outline-primary"
+            >Ver más link...</a
+          > -->
+  </div>
+</div>
