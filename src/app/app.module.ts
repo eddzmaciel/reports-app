@@ -46,6 +46,7 @@ import { HttpClientModule } from "@angular/common/http";
 import { AgmCoreModule } from "@agm/core";
 import { StatusReportsComponent } from "./components/status-reports/status-reports.component";
 
+import { ChartsModule } from "ng2-charts";
 //------------------
 
 @NgModule({
@@ -76,7 +77,8 @@ import { StatusReportsComponent } from "./components/status-reports/status-repor
     HttpClientModule,
     AgmCoreModule.forRoot({
       apiKey: "AIzaSyARLbMJYAFNDIXqmzQbi9HDRPY7ECs6Hxo"
-    })
+    }),
+    ChartsModule
   ],
   //here goes all our services
   providers: [HeroesService, ExampleOneService, ExampleTwoService],
