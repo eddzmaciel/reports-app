@@ -1,19 +1,53 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, AfterViewInit, ViewChild, ElementRef, OnInit } from "@angular/core";
+import loanData from "./collateralLoanData.json";
 
 @Component({
   selector: "app-home",
   templateUrl: "./home.component.html",
   styleUrls: ["./home.component.css"]
 })
-export class HomeComponent implements OnInit {
-  constructor() {}
 
-  ngOnInit() {}
+export class HomeComponent implements AfterViewInit {
+  title = 'angular-gmap';
+  @ViewChild('mapContainer', { static: false }) gmap: ElementRef;
+  map: google.maps.Map;
+  lat = 37.7169082;
+  lng = -122.0297493;
+
+  coordinates = new google.maps.LatLng(this.lat, this.lng);
+
+  mapOptions: google.maps.MapOptions = {
+    center: this.coordinates,
+    zoom: 10
+  };
+
+  infowindow = new google.maps.InfoWindow({});
+
+  ngAfterViewInit() {
+    this.mapInitializer();
+  }
+
+  mapInitializer() {
+    this.map = new google.maps.Map(this.gmap.nativeElement, this.mapOptions);
+    loanData.forEach(location => {
+      let latLng = { lat: Number(location["Collateral_Latitude"]), lng: Number(location["Collateral_Longitude"]) };
+
+      // Set the position and title
+      let marker = new google.maps.Marker({
+        position: latLng,
+        title: location["Collateral_City"],
+        map: this.map
+      })
+      marker.setMap(this.map);
+    })
+  }
 
   public barChartOptions = {
     scaleShowVerticalLines: false,
     responsive: true
   };
+
+
 
   //barChart
   public barChartLabels = [

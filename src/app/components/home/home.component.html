@@ -15,42 +15,24 @@
   <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
 </div>
 
+<div #mapContainer id="map"></div>
+
 <div class="row">
   <div class="col-6">
-    <canvas
-      baseChart
-      [datasets]="barChartData"
-      [labels]="barChartLabels"
-      [options]="barChartOptions"
-      [legend]="barChartLegend"
-      [chartType]="barChartType"
-    >
+    <canvas baseChart [datasets]="barChartData" [labels]="barChartLabels" [options]="barChartOptions"
+      [legend]="barChartLegend" [chartType]="barChartType">
     </canvas>
   </div>
   <div class="col-6">
-    <canvas
-      baseChart
-      [data]="doughnutChartData"
-      [labels]="doughnutChartLabels"
-      [chartType]="doughnutChartType"
-    ></canvas>
+    <canvas baseChart [data]="doughnutChartData" [labels]="doughnutChartLabels"
+      [chartType]="doughnutChartType"></canvas>
   </div>
 </div>
 <div class="row">
   <div class="col-6">
-    <canvas
-      baseChart
-      [datasets]="radarChartData"
-      [labels]="radarChartLabels"
-      [chartType]="radarChartType"
-    ></canvas>
+    <canvas baseChart [datasets]="radarChartData" [labels]="radarChartLabels" [chartType]="radarChartType"></canvas>
   </div>
   <div class="col-6">
-    <canvas
-      baseChart
-      [data]="pieChartData"
-      [labels]="pieChartLabels"
-      [chartType]="pieChartType"
-    ></canvas>
+    <canvas baseChart [data]="pieChartData" [labels]="pieChartLabels" [chartType]="pieChartType"></canvas>
   </div>
 </div>
