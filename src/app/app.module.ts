@@ -28,14 +28,26 @@ import { ExampleOneComponent } from "./components/example-one/example-one.compon
 import { ExampleTwoComponent } from "./components/example-two/example-two.component";
 import { HeroeTarjetaComponent } from "./components/heroe-tarjeta/heroe-tarjeta.component";
 
-//first republic Components
+//
 import { ClientDocumentComponent } from "./components/client-document/client-document.component";
 
 //style
 import { AngularFontAwesomeModule } from "angular-font-awesome";
-import { ReportsComponent } from './components/reports/reports.component';
-import { MapViewComponent } from './components/map-view/map-view.component';
-import { FormReportsComponent } from './components/form-reports/form-reports.component';
+
+//------------------
+
+// eagle eye components
+import { ReportsComponent } from "./components/reports/reports.component";
+import { MapViewComponent } from "./components/map-view/map-view.component";
+import { FormReportsComponent } from "./components/form-reports/form-reports.component";
+
+//eagle eye modules
+import { HttpClientModule } from "@angular/common/http";
+import { AgmCoreModule } from "@agm/core";
+import { StatusReportsComponent } from "./components/status-reports/status-reports.component";
+
+//------------------
+
 @NgModule({
   //here goes all our components
   declarations: [
@@ -49,14 +61,23 @@ import { FormReportsComponent } from './components/form-reports/form-reports.com
     ExampleTwoComponent,
     SearchResultComponent,
     HeroeTarjetaComponent,
-    //First Republic Components
+    //eagle eye Components
     ClientDocumentComponent,
     ReportsComponent,
     MapViewComponent,
-    FormReportsComponent
+    FormReportsComponent,
+    StatusReportsComponent
   ],
   //here goes our app routing
-  imports: [BrowserModule, APP_ROUTING, AngularFontAwesomeModule],
+  imports: [
+    BrowserModule,
+    APP_ROUTING,
+    AngularFontAwesomeModule,
+    HttpClientModule,
+    AgmCoreModule.forRoot({
+      apiKey: "AIzaSyARLbMJYAFNDIXqmzQbi9HDRPY7ECs6Hxo"
+    })
+  ],
   //here goes all our services
   providers: [HeroesService, ExampleOneService, ExampleTwoService],
   bootstrap: [AppComponent]
