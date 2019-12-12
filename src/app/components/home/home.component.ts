@@ -1,4 +1,10 @@
-import { Component, AfterViewInit, ViewChild, ElementRef, OnInit } from "@angular/core";
+import {
+  Component,
+  AfterViewInit,
+  ViewChild,
+  ElementRef,
+  OnInit
+} from "@angular/core";
 import loanData from "./collateralLoanData.json";
 
 @Component({
@@ -6,10 +12,9 @@ import loanData from "./collateralLoanData.json";
   templateUrl: "./home.component.html",
   styleUrls: ["./home.component.css"]
 })
-
 export class HomeComponent implements AfterViewInit {
-  title = 'angular-gmap';
-  @ViewChild('mapContainer', { static: false }) gmap: ElementRef;
+  title = "angular-gmap";
+  @ViewChild("mapContainer", { static: false }) gmap: ElementRef;
   map: google.maps.Map;
   lat = 37.7169082;
   lng = -122.0297493;
@@ -30,16 +35,19 @@ export class HomeComponent implements AfterViewInit {
   mapInitializer() {
     this.map = new google.maps.Map(this.gmap.nativeElement, this.mapOptions);
     loanData.forEach(location => {
-      let latLng = { lat: Number(location["Collateral_Latitude"]), lng: Number(location["Collateral_Longitude"]) };
+      let latLng = {
+        lat: Number(location["Collateral_Latitude"]),
+        lng: Number(location["Collateral_Longitude"])
+      };
 
       // Set the position and title
       let marker = new google.maps.Marker({
         position: latLng,
         title: location["Collateral_City"],
         map: this.map
-      })
+      });
       marker.setMap(this.map);
-    })
+    });
   }
 
   public barChartOptions = {
@@ -47,42 +55,43 @@ export class HomeComponent implements AfterViewInit {
     responsive: true
   };
 
-
-
   //barChart
   public barChartLabels = [
-    "2006",
-    "2007",
-    "2008",
-    "2009",
-    "2010",
-    "2011",
-    "2012"
+    "Q3'18",
+    "Q4'18",
+    "Q1'19",
+    "Q2'19",
+    "Q3'19",
+    "Q4'19"
   ];
   public barChartType = "bar";
   public barChartLegend = true;
   public barChartData = [
-    { data: [65, 59, 80, 81, 56, 55, 40], label: "Series A" },
-    { data: [28, 48, 40, 19, 86, 27, 90], label: "Series B" },
-    { data: [28, 48, 40, 19, 86, 27, 90], label: "Series C" }
+    { data: [165, 176, 152, 179, 151, 153, 168], label: "Improving" },
+    { data: [180, 191, 164, 158, 172, 152, 161], label: "Stable" },
+    { data: [145, 144, 160, 167, 178, 177, 153], label: "Deteriorating" }
   ];
 
   //doughnutChart
   public doughnutChartLabels = [
-    "Sales Q1",
-    "Sales Q2",
-    "Sales Q3",
-    "Sales Q4",
-    "Sales Q5"
+    "05 - Special Mention",
+    "06 - Substandard High",
+    "07 - Substandard Low",
+    "08 - Doubtful"
   ];
-  public doughnutChartData = [120, 150, 180, 90, 100];
+  public doughnutChartData = [54, 76, 9, 2];
   public doughnutChartType = "doughnut";
 
   //radarChart
-  public radarChartLabels = ["Q1", "Q2", "Q3", "Q4", "Q5"];
+  public radarChartLabels = [
+    "05 - Special Mention",
+    "06 - Substandard High",
+    "07 - Substandard Low",
+    "08 - Doubtful"
+  ];
   public radarChartData = [
-    { data: [120, 130, 180, 70, 33], label: "2017" },
-    { data: [90, 150, 200, 45, 55], label: "2018" }
+    { data: [66, 74, 65, 45], label: "Q3'19" },
+    { data: [54, 76, 69, 42], label: "Q4'19" }
   ];
   public radarChartType = "radar";
 

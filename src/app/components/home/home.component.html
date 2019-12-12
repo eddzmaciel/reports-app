@@ -1,38 +1,41 @@
-<div class="jumbotron animated fadeIn fast">
-  <h1 class="display-4">App</h1>
-  <p class="lead">
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-    cillum dolore eu
-  </p>
-  <hr class="my-4" />
-  <p>
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-  </p>
-  <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
-</div>
+<div #mapContainer id="map" class="animated fadeIn fast"></div>
 
-<div #mapContainer id="map"></div>
-
-<div class="row">
+<div class="row animated fadeIn fast">
   <div class="col-6">
-    <canvas baseChart [datasets]="barChartData" [labels]="barChartLabels" [options]="barChartOptions"
-      [legend]="barChartLegend" [chartType]="barChartType">
+    <canvas
+      baseChart
+      [datasets]="barChartData"
+      [labels]="barChartLabels"
+      [options]="barChartOptions"
+      [legend]="barChartLegend"
+      [chartType]="barChartType"
+    >
     </canvas>
   </div>
   <div class="col-6">
-    <canvas baseChart [data]="doughnutChartData" [labels]="doughnutChartLabels"
-      [chartType]="doughnutChartType"></canvas>
+    <canvas
+      baseChart
+      [data]="doughnutChartData"
+      [labels]="doughnutChartLabels"
+      [chartType]="doughnutChartType"
+    ></canvas>
   </div>
 </div>
 <div class="row">
   <div class="col-6">
-    <canvas baseChart [datasets]="radarChartData" [labels]="radarChartLabels" [chartType]="radarChartType"></canvas>
+    <canvas
+      baseChart
+      [datasets]="radarChartData"
+      [labels]="radarChartLabels"
+      [chartType]="radarChartType"
+    ></canvas>
   </div>
   <div class="col-6">
-    <canvas baseChart [data]="pieChartData" [labels]="pieChartLabels" [chartType]="pieChartType"></canvas>
+    <canvas
+      baseChart
+      [data]="pieChartData"
+      [labels]="pieChartLabels"
+      [chartType]="pieChartType"
+    ></canvas>
   </div>
 </div>
