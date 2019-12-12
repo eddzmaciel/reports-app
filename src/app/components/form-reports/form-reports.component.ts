@@ -18,7 +18,8 @@ export class FormReportsComponent implements OnInit {
 
   constructor(
     private activateroute: ActivatedRoute,
-    private _reportsDataService: ReportsDataService
+    private _reportsDataService: ReportsDataService,
+    private router: Router
   ) {
     console.log("form report result");
     console.log("currentDate: ", this.currentDate);
@@ -37,6 +38,10 @@ export class FormReportsComponent implements OnInit {
     console.log("this.reportData[path]:", reportData.path);
 
     this.reportData.path += value;
+  }
+
+  onReturn() {
+    this.router.navigate(["/status-reports"]);
   }
 
   ngOnInit() {

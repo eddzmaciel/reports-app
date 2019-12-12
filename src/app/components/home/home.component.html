@@ -1,7 +1,26 @@
-<div #mapContainer id="map" class="animated fadeIn fast"></div>
+<div class="jumbotron jumbotron-fluid animated fadeIn fast">
+  <div class="container">
+    <h4 class="display-4 d-flex justify-content-center">
+      Eagle Eye Credit Manager
+    </h4>
+    <p class="lead d-flex justify-content-center">
+      This app is to monitor loans and to mitigate risk throughout our lending
+      portfolio.
+    </p>
+  </div>
+</div>
+<div>
+  <h5 class="d-flex justify-content-center">
+    Collateral Locations for Loans Under Review
+  </h5>
+  <div #mapContainer id="map" class="animated fadeIn fast"></div>
+</div>
 
-<div class="row animated fadeIn fast">
+<div class="row animated fadeIn fast mt-5">
   <div class="col-6">
+    <h6 class="d-flex justify-content-center">
+      Current Status for 4W or Worse.
+    </h6>
     <canvas
       baseChart
       [datasets]="barChartData"
@@ -13,6 +32,7 @@
     </canvas>
   </div>
   <div class="col-6">
+    <h6 class="d-flex justify-content-center">Risk Rating Breakdown.</h6>
     <canvas
       baseChart
       [data]="doughnutChartData"
@@ -21,21 +41,16 @@
     ></canvas>
   </div>
 </div>
-<div class="row">
-  <div class="col-6">
+<div class="row mt-5">
+  <div class="col-12">
+    <h6 class="d-flex justify-content-center">
+      Risk Rating Status Quarter Over Quarter.
+    </h6>
     <canvas
       baseChart
       [datasets]="radarChartData"
       [labels]="radarChartLabels"
       [chartType]="radarChartType"
-    ></canvas>
-  </div>
-  <div class="col-6">
-    <canvas
-      baseChart
-      [data]="pieChartData"
-      [labels]="pieChartLabels"
-      [chartType]="pieChartType"
     ></canvas>
   </div>
 </div>
