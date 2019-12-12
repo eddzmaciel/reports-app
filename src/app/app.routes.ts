@@ -12,6 +12,8 @@ import { ExampleTwoComponent } from "./components/example-two/example-two.compon
 
 //eagle eye components
 import { FormReportsComponent } from "./components/form-reports/form-reports.component";
+import { StatusReportsComponent } from "./components/status-reports/status-reports.component";
+import { MapViewComponent } from "./components/map-view/map-view.component";
 
 const APP_ROUTES: Routes = [
   { path: "home", component: HomeComponent },
@@ -20,13 +22,16 @@ const APP_ROUTES: Routes = [
   { path: "heroe-detail/:id", component: HeroeDetailComponent },
   { path: "example-one", component: ExampleOneComponent },
   { path: "example-two", component: ExampleTwoComponent },
-  //eagle eye routes
-  { path: "form-reports", component: FormReportsComponent },
   {
     path: "search-result/:termino",
     component: SearchResultComponent,
     data: {}
   },
+  //eagle eye routes
+  { path: "status-reports", component: StatusReportsComponent },
+  { path: "form-reports/:id", component: FormReportsComponent },
+  { path: "map-view", component: MapViewComponent },
+
   { path: "**", pathMatch: "full", redirectTo: "home" }
 ];
 
