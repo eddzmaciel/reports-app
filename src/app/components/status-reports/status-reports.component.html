@@ -1,5 +1,5 @@
 <div class="row">
-  <h2>Drag and drop Example</h2>
+  <h2>Quarterly Status List</h2>
   <hr />
 </div>
 <div class="row">
@@ -8,19 +8,23 @@
       <tr>
         <th scope="col">#</th>
         <th scope="col">Name</th>
-        <th scope="col">Count</th>
-        <th scope="col">Commitment</th>
-        <th scope="col">Balance</th>
+        <th scope="col">Strategy</th>
+        <th scope="col">Status</th>
+        <th scope="col">Convenant Compliance</th>
+        <th scope="col">Loans</th>
         <th scope="col">Actions</th>
       </tr>
     </thead>
     <tbody>
       <tr *ngFor="let item of reportsData; let i = index">
-        <th scope="row">{{ i }}</th>
-        <td>{{ item.name }}</td>
-        <td>{{ item.count }}</td>
-        <td>{{ item.commitment }}</td>
-        <td class="text-pending">{{ item.balance }}</td>
+        <th scope="row">{{ i + 1 }}</th>
+        <td>{{ item.relationshipName }}</td>
+        <td>{{ item.strategy }}</td>
+        <td>{{ item.status }}</td>
+        <td class="text-pending">{{ item.covenantCompliance }}</td>
+        <td class="text-pending">
+          <span class="badge badge-light">{{ item.loans.length }}</span>
+        </td>
         <td class="td-large">
           <button
             type="button"

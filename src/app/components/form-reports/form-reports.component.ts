@@ -12,26 +12,17 @@ import { ReportsDataService } from "../../services/reports-data.service";
   styleUrls: ["./form-reports.component.css"]
 })
 export class FormReportsComponent implements OnInit {
-  reportData: any = {
-    name: "",
-    count: "",
-    commitment: "",
-    balance: "",
-    comments: ""
-  };
+  reportData: any = {};
+
+  currentDate = new Date().toLocaleString();
 
   constructor(
     private activateroute: ActivatedRoute,
     private _reportsDataService: ReportsDataService
   ) {
     console.log("form report result");
+    console.log("currentDate: ", this.currentDate);
     this.activateroute.params.subscribe(params => {
-      console.log(
-        "here is the param: ",
-        params,
-        " specific param",
-        params["id"]
-      );
       this.reportData = this._reportsDataService.getReportDataDetail(
         params["id"]
       );
